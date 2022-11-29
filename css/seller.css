@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
+    background-color: rgb(143, 205, 226);
 
 }
 .contenter{
@@ -100,3 +101,31 @@ ul li a:hover {
 .menu-right button a{
     text-decoration: none;
 } 
+
+
+.nav-content{
+    padding-top: 100px;
+    text-align: center;
+
+}
+.head{
+    border: 1px solid #2196F3 ;
+    background-color: #0b7dda;
+    margin: 30px 300px 80px 300px;
+    border-radius: 10px;
+
+    
+}
+.head h2{
+    color: purple;
+}
+
+table, th, td {
+    margin: auto;
+    padding: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table, th{
+    background-color: rgb(252, 164, 2);
+}
