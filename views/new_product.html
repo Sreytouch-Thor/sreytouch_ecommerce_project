@@ -33,26 +33,45 @@
             <div class="header">
                 <h2>New Product</h2>
             </div>
-            <div class="form">
-                <form action="/action_page.php" id="form">
-                    <div class="form1"></div>
-                        <label for="fname">Name:</label>
-                        <input type="text" id="fname1" name="fname"><br><br>
+            <div class="contain">
+                <form action="/action_page.php">
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="fname">Name</label>
                     </div>
-                    <div class="form1"></div>
-                        <label for="fname">Description:</label>
-                        <input type="text" id="fname2" name="fname"><br><br>
+                    <div class="col-75">
+                      <input type="text" id="fname" name="name" placeholder="Your product name..">
                     </div>
-                    <div class="form1"></div>
-                        <label for="fname">Price:</label>
-                        <input type="text" id="fname3" name="fname"><br><br>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="lname">Price</label>
                     </div>
-                    <div class="form1"></div>
-                        <label for="fname">img:</label>
-                        <input type="text" id="fname4" name="fname"><br><br>
+                    <div class="col-75">
+                      <input type="text" id="lname" name="" placeholder="$">
                     </div>
-                  </form>
-            </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="imag">Imag</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="file" id="myFile" name="filename">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-25">
+                      <label for="description">Description</label>
+                    </div>
+                    <div class="col-75">
+                      <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button><a href=""> Submit</a></button>
+                  </div>
+                </form>
+              </div>
         </div>
     </div>
     
