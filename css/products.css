@@ -31,14 +31,14 @@ body{
     display: flex;
     justify-content: center;
 }
-.search {
+form {
     width: 50%;
     display: flex;
 
     padding: 15px;
 
 }
-.search input[type=text] {
+form input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
@@ -47,7 +47,7 @@ body{
     background: #f1f1f1;
     border-radius: 20px 0px 0px 20px;
 }
-.search button {
+form button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -60,7 +60,7 @@ body{
     border-radius: 0px 20px 20px 0px;
 }
   
-.search button:hover {
+form button:hover {
     background: #0b7dda;
 }
   

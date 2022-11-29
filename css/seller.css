@@ -126,6 +126,10 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
-table, th{
+th {
     background-color: rgb(252, 164, 2);
+}
+td{
+    background-color: aliceblue;
+    color: black;
 }
