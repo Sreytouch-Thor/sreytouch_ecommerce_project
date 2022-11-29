@@ -2,13 +2,14 @@ body{
     margin: 0;
     padding: 0;
     margin-top: 20px;
-    background-color: rgb(238, 229, 229);
+    background-image:url(../imag/bg.jpg) ;
+    background-size: cover;
 }
 form {
     border-radius: 10px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     margin: auto;
-    background-color: rgb(200, 200, 210);
+    background-color:#0b7dda;
     width: 40%;
 }
 .name{

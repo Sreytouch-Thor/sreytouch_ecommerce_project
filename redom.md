@@ -5,4 +5,7 @@
 - seller **1h** 
 - sing in **1h**
 
+## create 
+- product 2h
+- seller  2h
 
