@@ -3,6 +3,7 @@ body{
     padding: 0;
     height: 100vh;
     background-color: rgb(170, 222, 239);
+    font-family: sans-serif;
 
 }
 .contenter{
@@ -101,3 +102,27 @@ ul li a:hover {
 .menu-right button a{
     text-decoration: none;
 } 
+.main{
+    padding-top: 100px;
+
+}
+.header{
+    border: 1px solid #2196F3 ;
+    background-color: #0b7dda;
+    margin: 30px 600px 80px 100px;
+    border-radius: 10px;
+ 
+}
+.header h2{
+    display: flex;
+    justify-content: center;
+}
+.form form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form form input[type=text]{
+    width: 40%;
+    padding: 10px;
+}
