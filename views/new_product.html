@@ -40,23 +40,23 @@
                       <label for="fname">Name</label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="fname" name="name" placeholder="Your product name..">
+                      <input id="fname"  type="text"  name="fname" placeholder="Your product name..">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-25">
-                      <label for="lname">Price</label>
+                      <label for="price">Price</label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="lname" name="" placeholder="$">
+                      <input type="text" id="price" name="" placeholder="$">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-25">
-                      <label for="imag">Imag</label>
+                      <label for="myFile">Imag</label>
                     </div>
                     <div class="col-75">
-                        <input type="file" id="myFile" name="filename">
+                        <input type="file" id="myFile" name="myFile">
                     </div>
                   </div>
                   <div class="row">
@@ -68,13 +68,15 @@
                     </div>
                   </div>
                   <div class="row">
-                    <button><a href=""> Submit</a></button>
+                    <button id="add-product">Add Product</button>
                   </div>
                 </form>
               </div>
+            <div id="display"></div>
         </div>
     </div>
     
     
 </body>
+<script src="../js/newProduct.js"></script>
 </html>
