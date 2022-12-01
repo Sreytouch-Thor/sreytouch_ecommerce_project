@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/seller.css">
 </head>
 <body>
-    <div class="contenter">
+    <div class="header">
         <div class="menu-bar">
             <div class="menu-left">
                 <div class="logo">
@@ -30,29 +30,59 @@
         </div>
         <div class="nav-content">
             <div class="head">
-                <h2>View Products</h2>
+                <h2>Add Products</h2>
             </div>
-            <table style="width:80%" id="table">
-                <!-- <tr id="main-table">
-                  <th>Name</th> 
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Actions</th>
-                </tr>
-                <tr id="table">
-                    <td id="name"></td>
-                    <td id="description"></td>
-                    <td id="price"></td>
-                    <td id="actions"></td>
-                </tr> -->
-            </table>
-            <div class="button">
-                <button><a href="../new-product/new_product.html"> Add Product</a></button>
-            </div>
+            <div class="container">
+                <div class="form-add">
+                    <form action="/action_page.php">
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="fname">Name</label>
+                          </div>
+                          <div class="col-75">
+                            <input id="fname"  type="text"  name="fname" placeholder="Your product name..">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="price">Price</label>
+                          </div>
+                          <div class="col-75">
+                            <input type="text" id="price" name="" placeholder="$">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="myFile">Imag</label>
+                          </div>
+                          <div class="col-75">
+                              <input type="url" id="myFile" >
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-25">
+                            <label for="description">Description</label>
+                          </div>
+                          <div class="col-75">
+                            <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+                          </div>
+                        </div>
+                        <!-- <div class="icon">
+                            <span id="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+                            <span id="delete"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                        </div> -->
+                        
+                        <div class="row">
+                          <button id="button">+Add Product</button>
+                        </div>
+                        <a href="../product/products.html">View Products</a>
+                    </form>
+                </div>
+                <div class="table-data"></div>
+            </div>    
         </div>
-
     </div>
-    
+    <script src="js/seller.js"></script>   
 </body>
-<script src="js/seller.js"></script>
+
 </html>

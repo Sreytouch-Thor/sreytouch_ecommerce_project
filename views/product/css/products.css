@@ -4,7 +4,7 @@ body{
     height: 100vh;
 
 }
-.contenter{
+.header{
     height: 100vh;
     color: white;
     font-family: sans-serif;
@@ -100,21 +100,30 @@ ul li a:hover {
 .menu-right button a{
     text-decoration: none;
 } 
-    
 
-.cart-products{
+    
+/* create cart */
+.cart-products , .container{
     width: 100%;
     display: flex;
     /* transform: translate(20px); */
     gap: 30px;
-    padding-top: 80px;
+    padding-top: 20px;
     flex-wrap: wrap;
     background-color: rgb(143, 205, 226);
     padding-left: 20px;
     
     
 }
+.cart-products{
+    padding-top: 30px;
+
+}
 .card {
+    width: 100%;
+}
+.card {
+    color: black;
     width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -124,16 +133,19 @@ ul li a:hover {
     
     
 }
+img{
+    width: 90%;
+}
 .card:hover{
     background-color: rgb(199, 199, 199);
 }
-h1{
+h1 , .name{
     color: #0b7dda;
 }
-.card p{
+p .descretion{
     color: black;
 }
-h4{
+h4 , .price{
     color: rgb(252, 164, 2);;
     font-size: 22px;
 }
@@ -151,7 +163,7 @@ h4{
     font-size: 18px;
   }
   
-  .card button:hover {
+.card button:hover {
     opacity: 0.7;
   }
   
@@ -186,3 +198,58 @@ footer{
     padding-right: 10px;
 } 
 
+
+
+/* Add card */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.5;
+}
+
+/* .container {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+/* .card {
+    flex-basis: 20%;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 7px;
+} */
+/* .name {
+    font-weight: 500;
+    text-transform: uppercase;
+} */
+
+/* .descrtion {
+    background: #000;
+    color: #fff;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+} */
+/* .price {
+    background: #b91cc1;
+    color: #fff;
+    width: 50px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+} */
