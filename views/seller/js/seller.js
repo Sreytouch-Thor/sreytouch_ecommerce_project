@@ -1,3 +1,5 @@
+// document.querySelector(".create_product").style.display = "none";
+const dom_questions_dialog = document.querySelector("#questions-dialog");
 function addProductToLocalStorage(key, value) {
     localStorage.setItem(key, value);
 }
@@ -5,31 +7,47 @@ function addProductToLocalStorage(key, value) {
 function getProductFromLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key)) ?? [];
 }
-const table = document.getElementById("table");
 
-function createNewRecord(name, price,imag , description ,edit, deleteproduct) {
+
+
+function createNewRecord(index,name, price,image , description ,edit, deleteproduct) {
     const tr = document.createElement('tr');
+    tr.dataset.index = index;
     const tdOne = document.createElement('td');
     const tdTwo = document.createElement('td');
     const tdThree = document.createElement('td');
     const tdfour = document.createElement('td');
     const tdfive = document.createElement('td');
     const tdsix = document.createElement('td');
+    const tagImage = document.createElement('img');
     tdOne.textContent = name;
     tdTwo.textContent = price;
-    tdThree.textContent = imag;
+    // tdThree.textContent = imag;
+    tagImage.src = image;
+    tagImage.className = 'tagImage';
+    tdThree.appendChild(tagImage);
     tdfour.textContent = description;
     tdfive.textContent = edit;
     tdsix.textContent = deleteproduct;
 
-    // const btnEdit = document.createElement("img");
-    // btnEdit.src='../imag/edit.png';
-    
-    // const btnDelete = document.createElement("img");
-    // btnDelete.src='../imag/delete.png';
+
+    //create button edit
     const btnEdit = document.createElement('button');
     btnEdit.classList.add('btnEdit');
     btnEdit.textContent = "Edit";
+
+    btnEdit.addEventListener("click",(e) =>{
+        // document.querySelector("#questions-dialog").style.display = "block";
+        let index = e.target.parentElement.parentElement.dataset.index;
+        document.getElementById('chose_name').value = name;
+        document.getElementById("chose_price").value = price;
+        document.getElementById("chose_img").value = imag;
+        document.getElementById("chose_description").value = description;        
+        productList.splice(index,1)
+        show(dom_questions_dialog);
+        // document.querySelector("#create").textContent = "Edit";
+        
+    })
     
 
     const btnDelete = document.createElement('button');
@@ -44,7 +62,6 @@ function createNewRecord(name, price,imag , description ,edit, deleteproduct) {
 
     tdfive.appendChild(btnEdit);
     tdsix.appendChild(btnDelete);
-    console.log(tdsix)
 
     // const editProduct = document.createElement("img");
     
@@ -96,23 +113,22 @@ function displayProduct() {
     const  newTable = document.createElement('table');
     newTable.appendChild(createTableHeader());
     let products = getProductFromLocalStorage("product-name");
-    for (let product of products) {
-        let row = createNewRecord(product.name, product.price + "$", product.imag , product.description );
+
+    for (let index = 0 ; index < products.length ; index++) {
+        let product = products[index];
+        let row = createNewRecord(index,product.name, product.price + "$", product.imag , product.description );
         newTable.appendChild(row)
     }
     tableData.appendChild(newTable);
 
 }
+const table = document.getElementById("table");
 
 const fullname = document.getElementById('fname');
 const prices = document.getElementById("price");
 const imag = document.getElementById("myFile");
+
 const description = document.getElementById("description");
-// const edit = document.querySelector("#edit");
-// console.log(edit)
-// const deleteproduct = document.querySelector("#delete");
-// edit.appendChild()
-// console.log(action)
 const btn = document.querySelector("#button");
 const tableData = document.querySelector('.table-data');
 
@@ -128,10 +144,10 @@ btn.addEventListener('click', (e) => {
 
     productList.push(productObject);
 
-    // fullname.value = ""
-    // prices.value = ""
-    // imag.value = ""
-    // description.value = ""
+    fullname.value = ""
+    prices.value = ""
+    imag.value = ""
+    description.value = ""
     // add the product
     addProductToLocalStorage('product-name', JSON.stringify(productList));
     }else {
@@ -141,34 +157,46 @@ btn.addEventListener('click', (e) => {
 
     displayProduct();
 })
+
+
+function hide(element) {
+    element.style.display = "none";
+}
+  
+function show(element) {
+    element.style.display = "block";
+}
+  
+  
+
+  
+function onCancel(e) {
+    // TODO : when clicking on ADD button, hide the dialog
+    dom_questions_dialog.style.display = "none";
+    products = JSON.parse(localStorage.getItem("product-name"));
+}
+
+
+
+
+let chose_name = document.getElementById('chose_name');
+let chose_price = document.getElementById("chose_price") ;
+let chose_img = document.getElementById("chose_img");
+let chose_description = document.getElementById("chose_description");
+let btnCreate = document.getElementById("edit");
+btnCreate.addEventListener("click",(e) =>{
+    //  when clicking on CREATE button :
+    // 1- Hide the dialog
+    dom_questions_dialog.style.display = "none";
+    // 2- Create a new product with the dialog form values
+    let newProduct = {name: chose_name.value, price: chose_price.value, imag:chose_img.value, description:chose_description.value}
+    productList.push(newProduct)
+
+    addProductToLocalStorage('product-name', JSON.stringify(productList));
+    displayProduct();
+})
+  // Add Events
+  let btn_cancel = document.querySelector("#cancel");
+  btn_cancel.addEventListener("click", onCancel);
 document.addEventListener('DOMContentLoaded', () => { displayProduct() })
 
-
-// function search(event) {
-//     // 1- Get the search text
-//     let searchProduct = searchProduct.value.toLowerCase();
-//     // let textlower = bookoftext.toLowerCase()
-//     let allBooks = document.querySelectorAll(".name")
-//     // 2- Loop on all LI
-//     for (let i in allBooks){
-//       if (allBooks[i].textContent.toLowerCase() === searchBooks|| allBooks[i].textContent.toLowerCase().includes(searchBooks)) {
-//         allBooks[i].parentNode.style.display="block"
-//       }
-//       else {
-//         allBooks[i].parentNode.style.display="none";
-//       }
-//     }
-  
-//   }
-  
-
-  
-// function deleteResult(event) {
-	
-//     // 1- Check the event if raised on the button delete 
-//     if(event.target.textContent == "delete"){
-//       event.target.this.parentElement.style.display = 'none';
-//       console.log(deleteResult);
-//     }
-    
-//   }

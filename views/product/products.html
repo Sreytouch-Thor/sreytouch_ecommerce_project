@@ -21,16 +21,15 @@
                 </form>
                 
                 <ul>
-                    <li><a href="../product/products.html">Products </a></li>
-                     <li><a href="../seller/seller.html">Seller </a></li>
+                    <li><a href="../product/products.html">PRODUCTS </a></li>
+                     <li><a href="../seller/seller.html">SELLER </a></li>
                 </ul>    
             </div>
             <div class="menu-right">
-                <button><a href="../sing in/sing in.html"> Sign In</a>  |<a href="../sing up/sing up.html"> Sign-up</a></button>
+                <button><a href="../sing in/sing in.html"> SIGN IN</a>  |<a href="../sing up/sing up.html"> SIGN UP</a></button>
             </div>
         </div>
         <div class="cart-products">
-        <div class="container">
         </div>
         <div class="container" id="container"></div>
         
@@ -56,6 +55,34 @@
                 </div>
             </div>
         </footer>
+    </div>
+    <div id="detail-product" style="display: none">
+        <dialog open>
+            <label>Detalls Product</label>
+          <section id="dialog_detail">
+            <img src="" alt="" id="image" style="width: 25%;">
+            <div class="product">
+                <h1 id="title"></h1>
+                <p id="price"></p>
+                <p id="description"></p><br><br>
+                <span>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+            </div>
+          </section>
+  
+          <menu>
+            <!-- When clicking on button,  call the right function  -->
+            <button id="cancel">Cancel</button>
+  
+            <!-- When clicking on button,  call the right function  -->
+            <button id="buy">buy now</button>
+          </menu>
+        </dialog>
     </div>
     
 </body>
